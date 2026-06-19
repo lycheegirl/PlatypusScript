@@ -1,0 +1,10 @@
+# Ignore build artifacts
+/platform_pico/build/
+/build/
+
+# Ignore local configuration
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+platypus.uf2
