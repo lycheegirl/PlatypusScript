@@ -104,10 +104,10 @@ int main() {
             FRESULT res;        
             
             // open custom target script file with raw FatFS READ access
-            res = f_open(&fil, "test.plat", FA_READ);
+            res = f_open(&fil, "payload.plat", FA_READ);
             
             if (res == FR_OK) {
-                printf("Successfully opened test.plat! Running parser engine...\n");
+                printf("Successfully opened payload.plat! Running parser engine...\n");
                 
                 char line_buffer[256]; 
                 
