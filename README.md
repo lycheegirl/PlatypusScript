@@ -36,18 +36,16 @@ I used a 4 pin micro SD card board module with jumper wires but as long as you w
 
 [Read the official pinout chart here](https://pip-assets.raspberrypi.com/categories/1088-raspberry-pi-pico-2-w/documents/RP-008305-DS-1-pico-2-w-pinout.pdf)
 
-Next steps:
+### Next steps:
 1. Format an Micro SD card with FAT32
 2. Create a new file called payload.txt
 3. Write your payload script and save it to the root of the card
 4. Eject and plug using USB- Micro USB adapter
 5. Watch as your Pi gets enumerated as a keyboard and types for you
 
-Coming soon (in no particular order):
+## Coming soon (in no particular order):
 - PlatypusScript docs for payload writing
 - Pi Zero compatbility
 - ETH packet control
 - Waveshare Pico LCD 1.14" screen for payload selection and other interactive stuff
 
-### For Pi Zero
-Coming soon maybe
