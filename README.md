@@ -43,7 +43,65 @@ I used a 4 pin micro SD card board module with jumper wires but as long as you w
 4. Eject and plug using USB- Micro USB adapter
 5. Watch as your Pi gets enumerated as a keyboard and types for you
 
+## PlatypusScript Supported Commands
+### Env
+- `LANG` - sets active keyboard language layout context. Only evaluated if it appears on line 1.
+- `SET <var> <val>` - initializes or updates a variable. accepts an integer literal or the value of another variable. Doesn't yet support Math, coming soon<sup>TM</sup>
+- `REM` - denotes a comment
+
+### Conditional blocks
+- `IF <condition>` - evaluates a condition and begind a conditional execution block
+- `ELSE IF <condition>` - evaluates an alternate state if the preceding `IF` evaluates to false
+- `ELSE` - executes a fallback block of code if no previoud `IF` or `ELSEIF` was truthy
+- `ENDIF` - closes out a conditional block
+
+### Loops
+- `DO` — establishes the starting marker position for a conditional loop block
+- `WHILE <condition>` — evaluates a condition and loops back to the nearest preceding `DO` statement if true
+- ______
+- `FOR <variable> <start> TO <end>` — initializes an integer tracking counter variable and sets a looping anchor block
+- `ENDFOR` — increments the designated `FOR` counter by 1 and loops back to the anchor if it has not yet exceeded the target end value
+
+### Execution/Output
+- `STRING <text>` - parses and transmits text charactesr as UTF-8 codepoints
+- `SLEEP <ms>` - suspends script execution for x number os milliseconds
+
+### Example Script
+```
+LANG US
+REM PlatypusScript demo
+
+SET target_val 50
+SET loop_active 1
+
+REM 1. Testing Conditional Logic Blocks
+IF target_val == 10
+    STRING Value is ten.
+ELSE IF target_val > 20
+    STRING Value is greater than twenty.
+ELSE
+    STRING Value is small.
+ENDIF
+
+SLEEP 200
+
+REM 2. Testing the FOR Loop
+FOR i 1 TO 3
+    STRING Iteration step...
+ENDFOR
+
+REM 3. Testing the DO / WHILE Loop
+REM (break it manually by changing the variable inside, math support coming soon)
+DO
+    STRING Inside the DO loop exactly once!
+    SET loop_active 0
+WHILE loop_active == 1
+
+STRING Script complete!
+```
+
 ## Coming soon (in no particular order):
+- Math support for `SET` variables
 - PlatypusScript docs for payload writing
 - Pi Zero compatbility
 - ETH packet control
