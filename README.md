@@ -30,9 +30,9 @@ I used a 4 pin micro SD card board module with jumper wires but as long as you w
 - GND to GND
 - VCC to Pi 5V
 - MISO to GPIO 16 (Physical pin 21)
-- MOSI to GPIO 19 (Physical pin 26)
+- MOSI to GPIO 19 (Physical pin 25)
 - SCK to GPIO 18 (Physical pin 24)
-- CS to GPIO 17 (Physical pin 22)
+- CS to GPIO 22 (Physical pin 29)
 
 [Read the official pinout chart here](https://pip-assets.raspberrypi.com/categories/1088-raspberry-pi-pico-2-w/documents/RP-008305-DS-1-pico-2-w-pinout.pdf)
 
